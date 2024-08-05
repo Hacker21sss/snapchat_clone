@@ -3,6 +3,7 @@ import Friend from './Friend'
 import { auth } from '@/auth'
 import { getSidebarUsers } from '@/lib/userdata';
 
+
 const Friends = async() => {
     const authUser=await auth();
     const otherUsers=authUser?.user ?await getSidebarUsers(authUser?.user?._id):[];

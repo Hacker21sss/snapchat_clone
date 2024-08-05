@@ -21,9 +21,9 @@ export function ImagePreview({ selectedFile, close, imageChange, setFlag }: { se
                     <DialogFooter className="mx-auto flex items-center p-4">
                         <DialogClose asChild>
                             <Button className="rounded-full" variant={'destructive'} onClick={close} size={'sm'}>cancel</Button>
-                            </DialogClose>
-                            <Button className="rounded-full" onClick={ imageChange}  size={'sm'}>change</Button>
-                            <Button className="rounded-full px-4 bg-green-500 hover:bg-green-400" onClick={()=> setFlag && setFlag(true)}  size={'sm'}>next</Button>
+                        </DialogClose>
+                        <Button className="rounded-full" onClick={imageChange} size={'sm'}>change</Button>
+                        <Button className="rounded-full px-4 bg-green-500 hover:bg-green-400" onClick={() => setFlag && setFlag(true)} size={'sm'}>next</Button>
                     </DialogFooter>
                 </div>
             </DialogContent>

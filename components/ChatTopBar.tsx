@@ -52,7 +52,7 @@ const SubmitButton = () => {
         <Button variant={'destructive'} className='rounded-full'>
 
             {
-                !pending ? "clear chat" : <Button  variant={'destructive'} className='rounded-full'><Loader2 className='mr-2 h-4 w-4 animate-spin' />please wait</Button>
+                !pending ? "clear chat" : <Button variant={'destructive'} className='rounded-full'><Loader2 className='mr-2 h-4 w-4 animate-spin' />please wait</Button>
             }
         </Button>
     )

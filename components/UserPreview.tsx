@@ -71,7 +71,7 @@ export function UserPreview({ selectedFile, close, onPreview }: { selectedFile: 
                                 } flex items-center cursor-pointer gap-5 p-2 rounded-md hover:bg-gray-200`}>
 
                                 <Avatar>
-                                    <AvatarImage src={user.profilephoto} alt={'user'} /> {/* Pass the correct src attribute */}
+                                    <AvatarImage src={'user.profilephoto'} alt={'user'} /> {/* Pass the correct src attribute */}
                                 </Avatar>
 
                                 <div >

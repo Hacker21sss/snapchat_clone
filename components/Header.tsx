@@ -1,49 +1,49 @@
-import React from 'react'
-import Image from 'next/image'
-import Myai from '@/public/myai-asset.png'
-import { Button } from './ui/button'
-import { FaLaptop } from "react-icons/fa";
+import React from 'react';
+import Image from 'next/image';
+import Myai from '@/public/myai-asset.png';
+import { Button } from './ui/button';
+import { FaLaptop } from 'react-icons/fa';
 import Link from 'next/link';
-import { auth } from '@/auth'
-import { SiImessage } from "react-icons/si";
-
+import { auth } from '@/auth';
+import { SiImessage } from 'react-icons/si';
 
 const Header = async () => {
-    const authUser=await auth();
-    
-    
+    const authUser = await auth();
+
     return (
-        <div className='flex justify-between items-center max-w-6xl mx-auto'>
-            <div >
-                <h1 className='text-7xl font-medium'>Snapchat is<br /> now on the <br />  web!</h1>
-                <h1 className='my-5 text-xl'>chat,snap,and video call your friends from <br />  wherever you are.</h1>
-{
-    authUser ? <Link href={"/login"}> <Button className='gap-2 rounded-full'><SiImessage size='18px' />start  chat </Button></Link>
-    :
-    <Link href={"/login"}> <Button className='gap-2 rounded-full'><FaLaptop />Login to chat </Button></Link>
-}
-
-
-
-              
-
-
+        <div className='flex flex-col md:flex-row justify-between items-center max-w-6xl mx-auto px-4 py-6 md:px-10 md:py-8'>
+            <div className='text-center md:text-left'>
+                <h1 className='text-4xl md:text-7xl font-medium leading-tight mb-4'>
+                    Snapchat is<br /> now on the <br /> web!
+                </h1>
+                <h2 className='text-lg md:text-xl mb-6'>
+                    Chat, snap, and video call your friends from <br /> wherever you are.
+                </h2>
+                {authUser ? (
+                    <Link href={"/chat"}>
+                        <Button className='gap-2 rounded-full'>
+                            <SiImessage size='18px' /> Start Chat
+                        </Button>
+                    </Link>
+                ) : (
+                    <Link href={"/login"}>
+                        <Button className='gap-2 rounded-full'>
+                            <FaLaptop /> Login to Chat
+                        </Button>
+                    </Link>
+                )}
             </div>
-            <div>
+            <div className='mt-6 md:mt-0'>
                 <Image
-
                     src={Myai}
                     alt='Myai'
-                    width={650}
-                    height={650}
+                    width={400}
+                    height={400}
+                    layout='intrinsic' // Adjust the layout property as needed
                 />
             </div>
-
-
-
-
         </div>
-    )
-}
+    );
+};
 
-export default Header
+export default Header;

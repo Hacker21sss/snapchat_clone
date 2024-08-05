@@ -1,9 +1,11 @@
 import mongoose ,{Document, Model}from "mongoose"
 export interface UserInterface{
-    username:String,
-    fullname:String,
-    email:String,
-    profilephoto:String
+    username:string,
+    fullname:string,
+    email:string,
+    profilephoto:string,
+    
+    
 };
 export interface UserDocument extends UserInterface,Document {
 createdAt:Date,
@@ -28,7 +30,8 @@ email:{
 profilephoto:{
     type:String,
     default:" "
-}
+},
+
 },{timestamps:true});
 
 

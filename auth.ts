@@ -3,6 +3,8 @@ import NextAuth from "next-auth";
 import { User } from "@/components/models/user.model";
 import github from "next-auth/providers/github";
 
+
+
 const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [
     github({
