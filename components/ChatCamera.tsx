@@ -2,13 +2,13 @@
 
 import { readFileAsDataURL } from '@/lib/utils';
 import React, { useRef, useState } from 'react';
-import { TbCameraDown } from "react-icons/tb";
+import { TbCameraDown } from 'react-icons/tb';
 import { ImagePreview } from './ImagePreview';
 import { UserPreview } from './UserPreview';
 
 const ChatCamera = () => {
     const imageRef = useRef<HTMLInputElement>(null);
-    const [selectedFile, setSelectedFile] = useState<string>("");
+    const [selectedFile, setSelectedFile] = useState<string>('');
     const [flag, setFlag] = useState(false);
 
     const fileChangeHandler = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -20,7 +20,7 @@ const ChatCamera = () => {
     };
 
     const closeDialog = () => {
-        setSelectedFile("");
+        setSelectedFile('');
         setFlag(false);
     };
 
@@ -41,7 +41,7 @@ const ChatCamera = () => {
                     />
                 </div>
                 <p className='w-2/3 text-lg text-center text-black mt-4 font-bold'>
-                    Let's send your snap
+                    Let&apos;s send your snap
                 </p>
             </div>
             {flag === false ? (
