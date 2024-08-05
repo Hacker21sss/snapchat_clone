@@ -16,17 +16,17 @@ const Navbar = async () => {
             <div className='flex items-center justify-between w-full md:w-auto mb-4 md:mb-0'>
                 <Image
                     src={snapchatl}
-                    alt='snapchatl'
+                    alt='Snapchat Logo'
                     width={50}
                     height={50}
                 />
-                <Input type="text" placeholder="search..." className='rounded-full w-full md:w-auto md:ml-4' />
+                <Input type="text" placeholder="Search..." className='rounded-full w-full md:w-auto md:ml-4' />
             </div>
 
             <div className='flex flex-wrap justify-center md:justify-start gap-2 md:gap-4 mb-4 md:mb-0'>
-                <Button variant={'ghost'}>stories</Button>
-                <Button variant={'ghost'}>spotlight</Button>
-                <Button variant={'ghost'}>chat</Button>
+                <Button variant={'ghost'}>Stories</Button>
+                <Button variant={'ghost'}>Spotlight</Button>
+                <Button variant={'ghost'}>Chat</Button>
                 <Button variant={'ghost'}>Lenses</Button>
             </div>
 
@@ -34,13 +34,13 @@ const Navbar = async () => {
                 <Button size={'icon'} variant={'secondary'} className='rounded-full bg-white text-black'>
                     <TbGridDots />
                 </Button>
-                <Button className='rounded-full'>"Snapchat Ads.."</Button>
-                <Button className='rounded-full'>"Download"</Button>
+                <Button className='rounded-full'>Snapchat Ads</Button>
+                <Button className='rounded-full'>Download</Button>
                 {authUser ? (
                     <LogoutButton />
                 ) : (
                     <Link href={'/login'}>
-                        <Button className='rounded-full'>"Login"</Button>
+                        <Button className='rounded-full'>Login</Button>
                     </Link>
                 )}
             </div>
