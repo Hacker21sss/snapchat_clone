@@ -27,34 +27,39 @@ const ChatCamera = () => {
     return (
         <>
             <div className='flex flex-col items-center justify-center m-2 rounded-md bg-clip-padding backdrop-blur-sm bg-opacity-5 border p-5'>
-                <div onClick={() => imageRef.current?.click()} className='rounded-full p-8 bg-white bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-30 border-gray-200 cursor-pointer text-white'>
-                    <TbCameraDown size={'50px'} />
+                <div
+                    onClick={() => imageRef.current?.click()}
+                    className='rounded-full p-8 bg-white bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-30 border-gray-200 cursor-pointer text-white'
+                >
+                    <TbCameraDown size='50px' />
                     <input
                         type='file'
                         ref={imageRef}
-                        accept='image/'
+                        accept='image/*'
                         hidden
                         onChange={fileChangeHandler}
                     />
                 </div>
-                <p className='w-2/3 text-lg text-center text-black mt-4 font-bold'>Let's send your snap</p>
+                <p className='w-2/3 text-lg text-center text-black mt-4 font-bold'>
+                    Let's send your snap
+                </p>
             </div>
             {flag === false ? (
                 <ImagePreview
-                    selectedFile={selectedFile} // Pass the actual selected file
+                    selectedFile={selectedFile}
                     close={closeDialog}
                     imageChange={() => imageRef.current?.click()}
-                    setFlag={setFlag} // Just pass the state setter function, no need for !!setFlag
+                    setFlag={setFlag}
                 />
             ) : (
                 <UserPreview
-                    selectedFile={selectedFile} // Pass the actual selected file
+                    selectedFile={selectedFile}
                     close={closeDialog}
-                    onPreview={() => setFlag(false)} // Set flag to false to switch back to image preview
+                    onPreview={() => setFlag(false)}
                 />
             )}
         </>
     );
-}
+};
 
 export default ChatCamera;
