@@ -34,13 +34,13 @@ const Navbar = async () => {
                 <Button size={'icon'} variant={'secondary'} className='rounded-full bg-white text-black'>
                     <TbGridDots />
                 </Button>
-                <Button className='rounded-full'>Snapchat Ads..</Button>
-                <Button className='rounded-full'>Download</Button>
+                <Button className='rounded-full'>"Snapchat Ads.."</Button>
+                <Button className='rounded-full'>"Download"</Button>
                 {authUser ? (
                     <LogoutButton />
                 ) : (
                     <Link href={'/login'}>
-                        <Button className='rounded-full'>Login</Button>
+                        <Button className='rounded-full'>"Login"</Button>
                     </Link>
                 )}
             </div>

@@ -14,21 +14,21 @@ const Header = async () => {
         <div className='flex flex-col md:flex-row justify-between items-center max-w-6xl mx-auto px-4 py-6 md:px-10 md:py-8'>
             <div className='text-center md:text-left'>
                 <h1 className='text-4xl md:text-7xl font-medium leading-tight mb-4'>
-                    Snapchat is<br /> now on the <br /> web!
+                    Snapchat is<br />" now on the" <br /> web!
                 </h1>
                 <h2 className='text-lg md:text-xl mb-6'>
-                    Chat, snap, and video call your friends from <br /> wherever you are.
+                    "Chat, snap, and video call your friends from" <br /> "wherever you are"
                 </h2>
                 {authUser ? (
                     <Link href={"/chat"}>
                         <Button className='gap-2 rounded-full'>
-                            <SiImessage size='18px' /> Start Chat
+                            <SiImessage size='18px' /> "Start Chat"
                         </Button>
                     </Link>
                 ) : (
                     <Link href={"/login"}>
                         <Button className='gap-2 rounded-full'>
-                            <FaLaptop /> Login to Chat
+                            <FaLaptop /> "Login to Chat"
                         </Button>
                     </Link>
                 )}
