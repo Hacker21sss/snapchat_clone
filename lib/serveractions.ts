@@ -18,7 +18,7 @@ export const sendSnapMessage = async (content: string,  recieverId: string, mess
   try {
     await connectDatabase();
     const authUser = await auth(); recieverId
-    const senderId = authUser?.user?._id;
+    const senderId = authUser?.user?.id;
     
 
     if (!senderId) {
@@ -69,7 +69,7 @@ export const deleteChat = async (userId: string) => {
     }
 
     const chat = await Chat.findOne({
-      participants: { $all: [authUser?.user?._id, userId] }
+      participants: { $all: [authUser?.user?.id, userId] }
     });
 
     if (!chat) return;
