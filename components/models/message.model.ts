@@ -1,5 +1,6 @@
 import mongoose, { Types, PopulatedDoc, Schema, Model } from "mongoose"
 
+
 import { UserDocument } from "./user.model"
 export interface MesssageInterface {
     senderId: Types.ObjectId | PopulatedDoc<UserDocument>,
@@ -11,6 +12,7 @@ export interface MesssageInterface {
 export interface MessageDocument extends MesssageInterface, Document {
     createdAt: Date,
     updatedAt: Date,
+    
 }
 
 const messageModel = new mongoose.Schema<MessageDocument>({
@@ -36,5 +38,7 @@ const messageModel = new mongoose.Schema<MessageDocument>({
         default: false
     }
 }, { timestamps: true })
+
+
 
 export const Message:Model<MessageDocument>=mongoose?.models?.Message || mongoose.model('Message',messageModel);

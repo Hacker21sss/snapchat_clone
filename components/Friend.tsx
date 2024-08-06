@@ -7,6 +7,7 @@ import { RiCheckboxBlankFill } from 'react-icons/ri';
 import { IoMdCheckboxOutline } from 'react-icons/io';
 import { MdCheckBoxOutlineBlank } from 'react-icons/md';
 
+
 interface Participant {
   profilephoto: string;
   fullname: string;
@@ -29,7 +30,7 @@ interface User {
   lastMessage?: LastMessage;
 }
 
-const Friend = ({ user }: { user: User }) => {
+const Friend = ({ user }: { user: any }) => {
   const lastMessage = user.lastMessage;
   const lastMessageType = lastMessage?.messageType;
   const formattedDate = lastMessage ? formatDate(lastMessage.createdAt) : formatDate(new Date());
